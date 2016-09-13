@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>console</title>
+</head>
+<body>
+<script>
+    function queue(arr,item){
+        arr.push(item);
+        var del=arr.shift();
+        return del;
+    }
+    var newArr=[1,2,3,4,5,6,7];
+
+    console.log("Before: "+JSON.stringify(newArr));
+    console.log(queue(newArr,8));
+    console.log("After: "+JSON.stringify(newArr));
+
+
+    function compare(num){
+        if(num<5){
+            return "small";
+        }else {
+            return "big";
+        }
+
+
+    }
+    console.log(compare(10));
+</script>
+</body>
+</html>
