@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Obj</title>
+</head>
+<body>
+<script>
+    var myCat={
+        "name":"shiwan",
+        "age":1,
+        "tails":1,
+        "legs":4
+    };
+
+    function lookUp(val){
+        var result="";
+        result=myCat[val];
+        return result;
+    }
+
+    function checkObj(val){
+        if(myCat.hasOwnProperty(val)){
+            return myCat[val];
+        }else{
+            return "Not Found!";
+        }
+    }
+    console.log(lookUp("name"));
+    console.log(checkObj("age"));
+    console.log(checkObj("color"));
+</script>
+</body>
+</html>
