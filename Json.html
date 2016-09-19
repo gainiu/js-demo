@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>JSON</title>
+</head>
+<body>
+<script>
+
+    var collection={
+        2014: {
+            name: "TO Hebe",
+            artist:"田馥甄",
+            tracks:[
+                    "寂寞寂寞就好",
+                    "你就不会想起我"
+            ]
+        },
+        2015:{
+            name:"渺小",
+            artist:"田馥甄",
+            tracks:[
+                    "渺小",
+                    "无常"
+            ]
+        },
+        2016:{
+            artist:"田馥甄"
+        }
+    };
+    var collectionCopy=JSON.parse(JSON.stringify(collection));
+    function collectionChange(id,prop,val){
+        if(val!=''&&prop!='tracks'){
+            collectionCopy[id][prop] = val;
+        }else if(val!=''&&prop=='tracks'){
+            collectionCopy[id][prop].push(val);
+        }else{
+            delete collectionCopy[id][prop];
+        }
+        return collection;
+    }
+
+    console.log(collectionChange(2016,"name","日常"));
+
+
+
+</script>
+</body>
+</html>
