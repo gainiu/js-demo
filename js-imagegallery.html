@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Image Gallery</title>
+</head>
+<body>
+<h1>图片列表</h1>
+<ul>
+    <li><a href="images/pho.jpg" title="pho">pho</a></li>
+    <li><a href="images/pp.jpg" title="pp">pp</a></li>
+    <li><a href="images/sign.jpg" title="sign">sign</a></li>
+</ul>
+<img src="images/pho.jpg" alt="my image gallery" id="placeholder">
+
+<script>
+    function showPic(whichpic){
+        var hrefPic=whichpic.getAttribute("href");
+        var placeholder=document.getElementById("placeholder");
+        placeholder.setAttribute("src",hrefPic);
+    }
+
+    for(var i=0;i< a.length;i++){
+        var a=document.getElementsByTagName("a");
+        a[i].onclick= function () {
+            showPic(this);
+            return false;
+        }
+    }
+</script>
+</body>
+</html>

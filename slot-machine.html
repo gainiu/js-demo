@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Slot Machine</title>
+    <script src="js/jquery-3.1.0.min.js"></script>
+    <style type="text/css">
+        .container{
+            width: 260px;
+            height: 400px;
+            border-radius: 5px;
+            background-color: rgba(72, 48, 8, 0.9);
+            margin: 100px auto;
+			padding-top:15px;
+        }
+        .header{
+            border: 2px solid #FFFFFF;
+            background-color: rgba(25, 126, 141, 0.9);
+            color:#FFFFFF;
+            border-radius: 5px;
+            height: 50px;
+            margin: 0 15px 15px 15px;
+
+        }
+        .header h2{
+            text-align: center;           
+			margin-top:0;
+        }
+        .header h3{
+            text-align: center;
+            font-size: 22px;
+            margin-top:-22px;        
+        }
+        .slots{
+            margin: 0 15px 15px 15px;
+            height: 100px;
+            border: 2px solid #FFFFFF;
+            background-color: rgba(25, 126, 141, 0.9);
+            border-radius: 5px;
+        }
+        .slot{
+            background-color: rgba(255, 255, 255, 0.8);
+            float: left;
+            margin: 8px;
+            width: 25%;
+            height: 80%;
+            border: 1px solid #333333;
+            text-align: center;
+            line-height: 80px;
+        }
+        .btn-go{
+            margin:  0 15px 15px 15px;
+            background-color: rgba(25, 126, 141, 0.9);
+            width: 228px;
+            height: 30px;
+            color: #FFFFFF;
+            border: 2px solid #FFFFFF;
+            font-size: 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .footer{
+            margin:  0 15px 15px 15px;
+            height: 130px;
+            background-color: rgba(25, 126, 141, 0.9);
+            border: 2px solid #FFFFFF;
+            color: #FFFFFF;
+            padding: 5px;
+        }
+        .logger{
+            height: 130px;
+            margin: auto;
+			word-wrap:break-word;
+
+        }
+    </style>
+</head>
+<body>
+<div>
+    <div class="container">
+        <div class="header">
+            <h2>最强</h2>
+            <h3>老虎机!</h3>
+        </div>
+        <div class="slots">
+            <div class="slot"></div>
+            <div class="slot"></div>
+            <div class="slot"></div>
+        </div>
+        <div >
+            <button type="button" class="btn-go">Go</button>
+        </div>
+        <div class="footer">
+            <span class="logger"></span>
+        </div>
+    </div>
+</div>
+<script>
+    function funSlot(){
+        var slotOne;
+        var slotTwo;
+        var slotThree;
+
+        slotOne=Math.floor(Math.random()*3)+1;
+        slotTwo=Math.floor(Math.random()*3)+1;
+        slotThree=Math.floor(Math.random()*3)+1;
+        $($(" .slot ")[0]).html(slotOne);
+        $($(" .slot ")[1]).html(slotTwo);
+        $($(" .slot ")[2]).html(slotThree);
+
+        if(slotOne===slotTwo&&slotTwo===slotThree){
+            $(" .logger ").html("It's A Win.");
+            return null;
+        }
+        if(slotOne!==undefined&&slotTwo!==undefined&&slotThree!==undefined){
+            $(" .logger ").html(slotOne+" "+slotTwo+" "+slotThree+"Not A Win.");
+        }
+        return [slotOne,slotTwo,slotThree];
+    }
+
+    $(document).ready(function(){
+        $(" .btn-go ").click(function(){
+            funSlot();
+        })
+    })
+</script>
+</body>
+</html>
