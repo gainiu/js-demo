@@ -3,6 +3,39 @@
 <head lang="en">
     <meta charset="UTF-8">
     <title>Image Gallery</title>
+    <style type="text/css">
+		body{
+			font-family: "Microsoft YaHei UI", sans-serif;
+			background-color: #CCC;
+			color: #333;
+			margin: 1em 10%;
+		}
+		a{
+			text-decoration:none;
+			color:#666;
+			font-size:22px;
+			font-weight:bold;
+			display:inline-block;
+			margin:10px;
+		}
+		li{
+			float:left;
+			list-style:none;
+		}
+		li:hover{
+			background-color: #666;
+		}
+		li:hover a{
+			color:#FFF;
+		}
+		ul{
+			padding:0;
+		}
+		img{
+			display:block;
+			clear:both;
+		}
+    </style>
 </head>
 <body>
 <h1>图片列表</h1>
@@ -12,21 +45,28 @@
     <li><a href="images/sign.jpg" title="sign">sign</a></li>
 </ul>
 <img src="images/pho.jpg" alt="my image gallery" id="placeholder">
+<p id="description">pho</p>
 
 <script>
     function showPic(whichpic){
         var hrefPic=whichpic.getAttribute("href");
         var placeholder=document.getElementById("placeholder");
         placeholder.setAttribute("src",hrefPic);
+
+        var title=whichpic.getAttribute("title");
+        var description=document.getElementById("description");
+        description.childNodes[0].nodeValue=title;//description.firstChild.nodeValue=title;
     }
 
-    for(var i=0;i< a.length;i++){
-        var a=document.getElementsByTagName("a");
+    var a=document.getElementsByTagName("a");
+    for(var i=0;i<a.length;i++){
         a[i].onclick= function () {
             showPic(this);
             return false;
         }
+
     }
+
 </script>
 </body>
 </html>

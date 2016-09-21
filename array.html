@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Array Object</title>
+</head>
+<body>
+<script>
+    var arr=[1,2,3,4,5,6];
+
+
+    //数组中的每个元素加3
+    var newArr=arr.map(function(val){
+        return val+3;
+    });
+    console.log(newArr);
+
+
+    //数组中的每个元素相减的结果
+    var newArr2=arr.reduce(function(preVal,curVal){
+        return preVal-curVal;
+    });
+    console.log(newArr2);
+
+
+    //数组按照从大到小的顺序排列（适用于顺序混乱的数组）
+    var newArr3=arr.sort(function(a,b){
+        return b-a;
+    });
+    console.log(newArr3);
+
+
+    //返回小于4的数组
+    var newArr4=arr.filter(function(val){
+        return val<4;
+    });
+    console.log(newArr4);
+
+
+    //翻转数组
+    var newArr5=arr.reverse();
+    console.log(newArr5);
+
+
+    //合并两个数组，第二个数组放在第一个数组后面
+    var newArr6=arr.concat(newArr5);
+    console.log(newArr6);
+</script>
+</body>
+</html>
