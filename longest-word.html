@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>找出字符串中最长的那段并且输出长度</title>
+</head>
+<body>
+<script>
+    function findLongest(str){
+        var string=str.split(" ");
+        var max=0;
+        for(var i=0;i<string.length;i++){
+            string[i].split("");
+            if(max<string[i].length){
+                max=string[i].length;
+            }
+        }
+        return max;
+
+    }
+    console.log(findLongest("The quick brown fox jumped over the lazy dog"));
+</script>
+</body>
+</html>
