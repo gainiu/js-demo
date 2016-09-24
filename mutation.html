@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>数组字符串1包含字符串2的所有字符</title>
+</head>
+<body>
+<script>
+    function mutation(arr){
+        if(arr.length!=2){
+            return false;
+        }
+        var arr1=arr[0].toLowerCase();
+        var arr2=arr[1].toLowerCase();
+        for(var i=0;i<arr2.length;i++){
+            if(arr1.indexOf(arr2[i])<0){
+                return false;
+            }
+        }
+        return true;
+    }
+    console.log(mutation(["zyxwvutsrqponmlkjihgfedcba", "qrstu"]));
+</script>
+</body>
+</html>

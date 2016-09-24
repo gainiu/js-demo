@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>先给数组排序，然后找到要插入的数组的下标</title>
+</head>
+<body>
+<script>
+    function where(arr,num){
+        arr.push(num);
+        var newArr=arr.sort(function(a,b){return a-b;});
+        return newArr.indexOf(num);
+    }
+    console.log(where([10, 20, 30, 40, 50], 35));
+</script>
+</body>
+</html>
