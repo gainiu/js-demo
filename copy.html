@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>copy</title>
+    <style type="text/css">
+        body{
+            font-family: "Microsoft YaHei UI", sans-serif;
+            background-color: #CCCCCC;
+        }
+        .container{
+            margin: 30px 20%;
+            color: #323232;
+        }
+        a{
+            color: #555555;
+            font-weight: bold;
+            font-size: 22px;
+            text-decoration: none;
+            padding: 10px;
+            display: inline-block;
+        }
+        li{
+            list-style: none;
+            float: left;
+
+        }
+        ul{
+            padding: 0;
+            margin-top: -10px;
+
+        }
+        a:hover{
+            color: #FFFFFF;
+            background-color: #000000;
+        }
+        img{
+            display: block;
+            clear: both;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>图片列表</h1>
+    <ul>
+        <li>
+            <a href="images/pho.jpg" title="pho">Pho</a>
+        </li>
+        <li>
+            <a href="images/pp.jpg" title="pp">Pp</a>
+        </li>
+        <li>
+            <a href="images/sign.jpg" title="sign">Sign</a>
+        </li>
+    </ul>
+    <img src="images/pho.jpg" alt="myGallery" id="placeholder" />
+    <p id="description">pho</p>
+</div>
+<script>
+    window.onload=function(){
+        function changePic(whichpic){
+            var thispic=whichpic.getAttribute("href");
+            var placeholder=document.getElementById("placeholder");
+            placeholder.setAttribute("src",thispic);
+
+            var text=whichpic.getAttribute("title");
+            var description=document.getElementById("description");
+            description.childNodes[0].nodeValue=text;
+        }
+        var a=document.getElementsByTagName("a");
+        for(var i=0;i<a.length;i++){
+            a[i].onclick=function(){
+                    changePic(this);
+                    return false;
+            }
+        }
+    }
+</script>
+</body>
+</html>
