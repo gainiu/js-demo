@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>获取当前地址</title>
+    <script src="js/jquery-3.1.0.min.js"></script>
+</head>
+<body>
+ <h4>You are here:</h4>
+ <div id="data"></div>
+<script>
+    if(navigator.geolocation){
+        navigator.geolocation.getCurrentPosition(function(position){
+            $("#data").html("维度："+position.coords.latitude+"<br>经度："+position.coords.longitude)
+        })
+    }
+</script>
+</body>
+</html>
