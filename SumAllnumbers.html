@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Sum all numbers in a range</title>
+</head>
+<body>
+<script>
+    function sumAll(arr){
+        var max=Math.max.apply(null,arr);
+        var min=Math.min.apply(null,arr);
+        var sum=0;
+        for(var i=0;i<max+1;i++){
+            sum+=i;
+        }
+        return sum;
+    }
+    console.log(sumAll([4,1]))
+</script>
+</body>
+</html>
