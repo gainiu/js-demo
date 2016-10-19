@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>将给定的数字转换成罗马数字</title>
+</head>
+<body>
+<script>
+    function convert(num){
+        var nums=[1000,900,500,400,100,90,50,40,10,9,5,4,1];
+        var romans=["m","cm","d","cd","c","xc","l","xl","x","ix","v","iv","i"];
+        var newnum="";
+        nums.forEach(function(item,index,array){
+            while(num>=item){
+                newnum+=romans[index];
+                num-=item;
+            }
+        });
+        return newnum.toLocaleUpperCase();
+    }
+    console.log(convert(63));
+</script>
+</body>
+</html>
