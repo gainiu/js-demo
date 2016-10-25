@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>使用给定的参数对句子执行一次查找和替换，然后返回新句子</title>
+</head>
+<body>
+<script>
+    function myReplace(str,before,after){
+        var newBefore=before.toLowerCase();
+        var newAfter="";
+
+        if(newBefore[0]!=before[0]){
+            newAfter=after[0].toUpperCase();
+            for(var i=1;i<after.length;i++){
+                newAfter+=after[i];
+            }
+
+            return str.replace(before,newAfter);
+        }
+        return str.replace(before,after);
+    }
+    alert(myReplace("He is Sleeping on the couch", "Sleeping", "sitting"));
+    console.log(myReplace("Let us go to the store", "store", "mall"));
+</script>
+</body>
+</html>
