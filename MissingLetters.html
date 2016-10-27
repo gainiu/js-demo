@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>从传递进来的字母序列中找到缺失的字母并返回它</title>
+</head>
+<body>
+<script>
+    function missingLetter(str){
+        if(str.charCodeAt(0)+str.length-1==str.charCodeAt(str.length-1)){
+            return undefined;
+        }
+        for(var i=1;i<str.length;i++){
+            if(str.charCodeAt(i)-str.charCodeAt(i-1)!=1){
+                return String.fromCharCode(str.charCodeAt(i-1)+1);
+            }
+        }
+    }
+
+
+    console.log(missingLetter("abcdf"));
+</script>
+</body>
+</html>

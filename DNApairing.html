@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>DNA 链缺少配对的碱基</title>
+</head>
+<body>
+<script>
+    function pair(str){
+        var arr=str.split("");
+        var pairs="";
+        var newarr=arr.map(function(item,index,array){
+            if(item=="A"){
+                pairs="T";
+            }
+            if(item=="T"){
+                pairs="A";
+            }
+            if(item=="C"){
+                pairs="G";
+            }
+            if(item=="G"){
+                pairs="C";
+            }
+            return [item,pairs];
+        });
+        return newarr;
+    }
+    console.log(pair("GCG"));
+    console.log(pair("CTCTA"));
+</script>
+</body>
+</html>
