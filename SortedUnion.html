@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>传入两个或两个以上的数组，返回一个不包含重复值的新数组</title>
+</head>
+<body>
+<script>
+    function sortedUnion(arr1,arr2,arr3){
+        var arrgus=Array.from(arguments);
+        var arr=arrgus.reduce(function(preVal,curVal,index,array){
+            return preVal.concat(curVal);
+        });
+        return arr.filter(function(item,index,array){
+            return array.indexOf(item)===index;
+        })
+    }
+    console.log(sortedUnion([1, 2, 3], [5, 2, 1, 4], [2, 1], [6, 7, 8]));
+</script>
+</body>
+</html>
