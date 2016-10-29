@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>符号转换为HTML实体</title>
+</head>
+<body>
+<script>
+    function convert(str){
+        str=str.replace(/[&]/g,"&amp").replace(/[<]/g,"&lt;").replace(/[>]/g,"&gt;").replace(/["]/g,"&quot;").replace(/[']/g,"&apos;");
+        return str;
+    }
+    console.log(convert("Dolce & Gabbana"));
+</script>
+</body>
+</html>
