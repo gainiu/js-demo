@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>求小于等于给定数值的质数之和</title>
+</head>
+<body>
+<script>
+    function prime(num){
+        var sum=[];
+        var ifPrime=function(num){
+            if(num<2){
+                return false;
+            }
+            if(num===2){
+                return true;
+            }
+            if(num%2===0){
+                return false;
+            }
+            for(var i=3;i<num;i+=2){
+                if(num%i===0){
+                    return false;
+                }
+            }
+            return true;
+        };
+        for(var i=2;i<=num;i++){
+            if(ifPrime(i)){
+                sum.push(i);
+            }
+        }
+        return sum.reduce(function(preVal,curVal){
+            return preVal+curVal;
+        })
+    }
+
+    console.log(prime(10));
+</script>
+</body>
+</html>

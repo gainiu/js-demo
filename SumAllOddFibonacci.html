@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>给一个正整数num，返回小于或等于num的斐波纳契奇数之和</title>
+</head>
+<body>
+<script>
+    function fibOdd(num){
+        var cache=[1,1];
+        var oddSum=2;
+
+        while(true){
+            var item=cache[0]+cache[1];
+            if(item>num){
+                return oddSum;
+            }
+            if(item%2){
+                oddSum+=item;
+            }
+            cache[0]=cache[1];
+            cache[1]=item;
+        }
+    }
+
+    console.log(fibOdd(8));
+</script>
+</body>
+</html>

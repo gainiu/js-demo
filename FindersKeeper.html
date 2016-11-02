@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>找出数组中符合第二个条件的第一个元素</title>
+</head>
+<body>
+<script>
+    function findKeeper(arr,func){
+        return arr.filter(func)[0];
+    }
+
+    console.log(findKeeper([1,2,3,4],function(num){return num%2===0;}));
+</script>
+</body>
+</html>
