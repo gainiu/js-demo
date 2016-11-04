@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>对嵌套的数组进行扁平化处理</title>
+</head>
+<body>
+<script>
+    function steam(arr){
+        var newArr=[];
+        for(var i=0;i<arr.length;i++){
+            if(Array.isArray(arr[i])){
+                newArr=newArr.concat(steam(arr[i]));
+            }else {
+                newArr.push(arr[i]);
+            }
+        }
+        return newArr;
+    }
+    console.log(steam([1, [2], [3, [[4]]]]));
+</script>
+</body>
+</html>
